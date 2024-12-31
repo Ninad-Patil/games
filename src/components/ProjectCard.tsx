@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, GamepadIcon } from 'lucide-react';
-import { Project } from '../types';
+import { motion } from "framer-motion";
+import { ExternalLink, GamepadIcon } from "lucide-react";
+import { Project } from "../types";
+import { li } from "framer-motion/client";
 
 interface ProjectCardProps {
   project: Project;
@@ -36,7 +37,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.title}
           </h3>
         </div>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          {project.description}
+        </p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
             <span
@@ -46,6 +49,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {tech}
             </span>
           ))}
+        </div>
+        <div className="mt-6">
+          <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
+            {project.title}
+          </h3>
+          <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+            {project.features.map((feature) => {
+              return <li>{feature}</li>;
+            })}
+          </ul>
         </div>
       </div>
     </motion.div>

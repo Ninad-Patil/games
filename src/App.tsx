@@ -1,3 +1,4 @@
+import { AboutSection } from "./components/AboutSection";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { ProjectSection } from "./components/ProjectSection";
@@ -9,7 +10,7 @@ export default function App() {
       <Hero />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <ProjectSection />
-        {/* <AboutSection /> */}
+        <AboutSection />
       </main>
     </div>
   );
